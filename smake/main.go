@@ -114,7 +114,7 @@ func smakeDir(gopath, srcRoot, dir string) error {
 	return execPkgs(c, pkgs, [][]string{
 		{"golint"},
 		{"go", "vet"},
-		{"gotags", "-R", "-f", "tags"},
+		{"gotags", "-R", "-f=tags"},
 	})
 }
 
