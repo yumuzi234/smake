@@ -94,8 +94,8 @@ func smakeDir(gopath, srcRoot, dir string) error {
 
 	c := &context{
 		dir: dir,
+		env: []string{fmt.Sprintf("GOPATH=%s", gopath)},
 	}
-	c.env = append(c.env, fmt.Sprintf("GOPATH=%s", gopath))
 
 	if err := execPkgs(c, pkgs, [][]string{
 		{"go", "install", "-v"},
