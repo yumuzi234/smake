@@ -111,15 +111,11 @@ func smakeDir(gopath, srcRoot, dir string) error {
 		return err
 	}
 
-	if err := execPkgs(c, pkgs, [][]string{
+	return execPkgs(c, pkgs, [][]string{
 		{"golint"},
 		{"go", "vet"},
 		{"gotags", "-R", "-f", "tags"},
-	}); err != nil {
-		return err
-	}
-
-	return nil
+	})
 }
 
 func absGOPATH() (string, error) {
