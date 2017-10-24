@@ -16,7 +16,7 @@ type context struct {
 	env    []string
 }
 
-func newContext(dir, gopath string) *context {
+func newContext(gopath, dir string) *context {
 	return &context{
 		gopath: gopath,
 		dir:    dir,
